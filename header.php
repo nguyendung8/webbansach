@@ -49,7 +49,7 @@
                   $total+=$fetch_total['quantity'] * $fetch_total['price'];
                }
             ?>
-            <a href="cart.php"> <i class="fas fa-shopping-cart"></i> <span>(<?php echo $cart_rows_number; ?>)</span> <span>(<?php echo $total; ?> VND)</span> </a>
+            <a href="cart.php"> <i class="fas fa-shopping-cart"></i> <span>(<?php echo $cart_rows_number; ?>)</span> <span>(<?php echo number_format($total,0,',','.' ); ?> VND)</span> </a>
          </div>
 
          <div class="user-box">

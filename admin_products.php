@@ -165,8 +165,8 @@
                   <div class="sub-name">Tác giả: <?php echo $fetch_products['author']; ?></div>
                   <div class="sub-name">Thể loại: <?php echo $fetch_products['category']; ?></div>
                   <div class="sub-name">Mô tả: <?php echo $fetch_products['describes']; ?></div>
-                  <div class="price"><span style="text-decoration-line: line-through"><?php echo $fetch_products['price']; ?></span> VND (Giảm giá: <?php echo $fetch_products['discount']; ?>%)</div>
-                  <div class="price"><?php echo $fetch_products['newprice']; ?> VND (SL: <?php echo $fetch_products['quantity']; ?>)</div>
+                  <div class="price"><span style="text-decoration-line: line-through"><?php echo number_format($fetch_products['price'],0,',','.'  ); ?></span> VND (Giảm giá: <?php echo $fetch_products['discount']; ?>%)</div>
+                  <div class="price"><?php echo number_format($fetch_products['newprice'],0,',','.' );; ?> VND (SL: <?php echo $fetch_products['quantity']; ?>)</div>
                   <a href="admin_products.php?update=<?php echo $fetch_products['id']; ?>" class="option-btn">Cập nhật</a>
                   <a href="admin_products.php?delete=<?php echo $fetch_products['id']; ?>" class="delete-btn" onclick="return confirm('Xóa truyện này?');">Xóa</a>
                </div>

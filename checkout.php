@@ -61,7 +61,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>checkout</title>
+   <title>Thanh toán</title>
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
    <link rel="stylesheet" href="css/style.css">
@@ -86,14 +86,14 @@
             $total_price = $fetch_cart['price'] * $fetch_cart['quantity'];
             $grand_total += $total_price;
    ?>
-               <p> <?php echo $fetch_cart['name']; ?> <span>(<?php echo $fetch_cart['price'].' VND'.' x '. $fetch_cart['quantity']; ?>)</span> </p>
+               <p> <?php echo $fetch_cart['name']; ?> <span>(<?php echo number_format( $fetch_cart['price'],0,',','.' ) .' VND'.' x '. $fetch_cart['quantity']; ?>)</span> </p>
    <?php
          }
       }else{
          echo '<p class="empty">Giỏ hàng của bạn trống!</p>';
       }
    ?>
-   <div class="grand-total"> Tổng số tiền : <span><?php echo $grand_total; ?> VND</span> </div>
+   <div class="grand-total"> Tổng số tiền : <span><?php echo number_format($grand_total,0,',','.' ); ?> VND</span> </div>
 
 </section>
 

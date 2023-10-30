@@ -83,7 +83,8 @@
                   <img class="image" src="uploaded_img/<?php echo $fetch_products['image']; ?>" alt="">
                   <div class="name"><?php echo $fetch_products['name']; ?> (<?php echo $fetch_products['category']; ?>)</div>
                   <div class="name"><?php echo $fetch_products['describes']; ?></div>
-                  <div class="price"><?php echo $fetch_products['newprice']; ?>/<span style="text-decoration-line:line-through"><?php echo $fetch_products['price']; ?></span> VND (<?php echo $fetch_products['discount']; ?>% SL: <?php echo $fetch_products['quantity']; ?>)</div>
+                  <div class="price"><?php echo number_format($fetch_products['newprice'],0,',','.' ); ?>/<span style="text-decoration-line:line-through"><?php echo number_format($fetch_products['price'],0,',','.' ); ?></span> VND (<?php echo $fetch_products['discount']; ?>% SL: <?php echo $fetch_products['quantity']; ?>)</div>
+                  <span style="font-size: 17px; display: flex;">Số lượng mua:</span>
                   <input type="number" min="<?=($fetch_products['quantity']>0) ? 1:0 ?>" max="<?php echo $fetch_products['quantity']; ?>" name="product_quantity" value="<?=($fetch_products['quantity']>0) ? 1:0 ?>" class="qty">
                   <input type="hidden" name="product_name" value="<?php echo $fetch_products['name']; ?>">
                   <input type="hidden" name="product_category" value="<?php echo $fetch_products['category']; ?>">

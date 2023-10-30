@@ -108,7 +108,7 @@
                   <p> Địa chỉ : <span><?php echo $fetch_orders['address']; ?></span> </p>
                   <p> Ghi chú : <span><?php echo $fetch_orders['note']; ?></span> </p>
                   <p> Tổng truyện : <span><?php echo $fetch_orders['total_products']; ?></span> </p>
-                  <p> Tổng giá : <span><?php echo $fetch_orders['total_price']; ?> VND</span> </p>
+                  <p> Tổng giá : <span><?php echo number_format($fetch_orders['total_price'],0,',','.' ); ?> VND</span> </p>
                   <p> Phương thức thanh toán : <span><?php echo $fetch_orders['method']; ?></span> </p>
                   <form action="" method="post">
                      <input type="hidden" name="order_id" value="<?php echo $fetch_orders['id']; ?>">

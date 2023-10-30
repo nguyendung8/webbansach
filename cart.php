@@ -69,13 +69,13 @@
                   <a href="cart.php?delete=<?php echo $fetch_cart['id']; ?>" class="fas fa-times" onclick="return confirm('Xóa khỏi giỏ hàng?');"></a>
                   <img src="uploaded_img/<?php echo $fetch_cart['image']; ?>" alt="">
                   <div class="name"><?php echo $fetch_cart['name']; ?></div>
-                  <div class="price"><?php echo $fetch_cart['price']; ?> VND (SL: <?php echo $fetch_quantity['quantity']; ?>)</div>
+                  <div class="price"><?php echo number_format($fetch_cart['price'],0,',','.' ); ?> VND (SL: <?php echo $fetch_quantity['quantity']; ?>)</div>
                   <form action="" method="post">
                      <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id']; ?>">
                      <input type="number" min="1" max="<?=$fetch_quantity['quantity']?>" name="cart_quantity" value="<?php echo $fetch_cart['quantity']; ?>">
                      <input type="submit" name="update_cart" value="Cập nhật" class="option-btn">
                   </form>
-                  <div class="sub-total"> Số tiền : <span><?php echo $sub_total = ($fetch_cart['quantity'] * $fetch_quantity['newprice']); ?> VND</span> </div>
+                  <div class="sub-total"> Số tiền : <span><?php $sub_total = ($fetch_cart['quantity'] * $fetch_quantity['newprice']); echo number_format($sub_total,0,',','.' ) ?> VND</span> </div>
                </div>
       <?php
                $grand_total += $sub_total;
@@ -91,7 +91,7 @@
    </div>
 
    <div class="cart-total">
-      <p>Tổng tiền : <span><?php echo $grand_total; ?> VND</span></p>
+      <p>Tổng tiền : <span><?php echo number_format($grand_total,0,',','.' ); ?> VND</span></p>
       <div class="flex">
          <a href="shop.php" class="option-btn">Tiếp tục mua hàng</a>
          <a href="checkout.php" class="btn">Tiến hành thanh toán</a>
